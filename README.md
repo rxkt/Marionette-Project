@@ -6,7 +6,7 @@
 ## Plans:
 #### Site changes based on:
 - number of total tags
-- number of a <i>certain tag</i>
-- 
+- number of a <i>certain tag</i><br>
+
 #### Save site to a local destination for comparision?
 
