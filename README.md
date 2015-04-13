@@ -1,9 +1,10 @@
 # Marionette-Project
+Collaborators: Eric Liao, Christopher Wennedy, Michael Huang
+Softdev Period 5
 
+### Goal (may expand): To create a chrome web extension that notifies the user of any updates to a site.
 
-## Goal (may expand): To create a chrome web extension that notifies the user of any updates to a site.
-
-## Plans:
+### Plans:
 #### Site changes based on:
 - number of total tags
 - number of a <i>certain tag</i>
