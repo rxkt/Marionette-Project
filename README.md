@@ -6,7 +6,11 @@
 ## Plans:
 #### Site changes based on:
 - number of total tags
-- number of a <i>certain tag</i><br>
+- number of a <i>certain tag</i>
+- new tag added or deleted
 
 #### Save site to a local destination for comparision?
 
+#### Resources to use:
+- Node.js web scrapes
+- http://lifehacker.com/5857721/how-to-build-a-chrome-extension !!!!
