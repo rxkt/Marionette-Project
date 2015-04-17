@@ -2,7 +2,8 @@
 Collaborators: Eric Liao, Christopher Wennedy, Michael Huang
 Softdev Period 5
 
-### Goal (may expand): To create a chrome web extension that notifies the user of any updates to a site.
+### Goal (may expand): Stuyvesant Buying and Selling website, add more features so we aren't stuck using a facebook group and hopefully it won't die after a few weeks.
+To create a chrome web extension that notifies the user of any updates to a site.
 
 ### Plans:
 #### Site changes based on:
