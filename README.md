@@ -5,12 +5,12 @@ Softdev Period 5
 ### Goal (may expand): Stuyvesant Buying and Selling website, add more features so we aren't stuck using a facebook group and hopefully it won't die after a few weeks.
 
 ### Plans:
-####JS-> MongoDB: (login system, products)
+####JS-> Firebase (as our database): (login system, products)
 ####CSS, buying-selling system structure
 ####D3-SVG visual on product reviews, user reviews.
 
 ###Timeline
-Beginning of May: Get a website/login working, setup mongoDB<br>
+Beginning of May: Get a website/login working, setup Firebase<br>
 2nd week of May: Start on buying/selling structure <br>
 3: Work in progress <br>
 4: Work in progress, start D3/user/item reviews, analysis libs <br>
