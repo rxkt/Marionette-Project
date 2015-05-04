@@ -43,7 +43,6 @@ $(document).ready(function() {
 	//user inputed email/pw combination
 	var name = $('#emailInput').val();
 	var pw = $('#passwordInput').val();
-	console.log("hi");
 	myDataRef.authWithPassword({
 	    "email": name,
 	    "password": pw
