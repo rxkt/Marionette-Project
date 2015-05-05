@@ -13,12 +13,13 @@ socketio = SocketIO(app)
 
 @app.route("/")
 @socketio.on('login')
-def home(email=None, password=None):
+def home(emailpassword={'email':None,'password':None}):
     if 'username' in session:
-        print('test: ' + str(email) + "  " + str(password))
+        print("chris is a bum")
+       ## print('test: ' + str(email) + "  " + str(password))
         return render_template("test.html")
     else:
-        print('test: ' + str(email) + "  " + str(password))
+        print('test: ' + str(emailpassword['email']) + "  " + str(emailpassword['password']))
         return render_template("test.html")
 
 if __name__ == "__main__":
