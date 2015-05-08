@@ -12,15 +12,21 @@ app.config['SECRET_KEY'] = 'hello'
 socketio = SocketIO(app)
 
 @app.route("/")
+def homez():
+    return render_template("test.html")
+
 @socketio.on('login')
 def home(emailpassword={'email':None,'password':None}):
+    print('it works1')
     if 'username' in session:
         print("chris is a bum")
        ## print('test: ' + str(email) + "  " + str(password))
-        return render_template("test.html")
+        
     else:
+        
         print('test: ' + str(emailpassword['email']) + "  " + str(emailpassword['password']))
-        return render_template("test.html")
+        
+        
 
 if __name__ == "__main__":
     app.debug = True

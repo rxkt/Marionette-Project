@@ -53,6 +53,7 @@ $(document).ready(function() {
 		console.log("Login successful! Welcome " + name, authData);
 		/*triggers 'login' python function, send email and password*/
 		socket.on('connect', function() {
+		    console.log("its working");
 		    socket.emit('login', {email : name, password : pw});
 		});
 	    }
