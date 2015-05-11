@@ -1,0 +1,20 @@
+var socket;
+
+$(document).ready(function(){
+    socket= io.connect('http://localhost:5000/');
+
+    
+    $('#signup').click(function(e){
+	var name= $('#emailInput').val();
+	var pw = $('#passwordInput').val();
+	console.log(name+pw);
+	socket.emit('login',{email:name,password:pw});
+	
+	
+    }
+		      )});
+		     
+		      
+
+   
+        
