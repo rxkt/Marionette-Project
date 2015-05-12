@@ -7,12 +7,18 @@ $(document).ready(function(){
     $('#signup').click(function(e){
 	var name= $('#userInput').val();
 	var pw = $('#passwordInput').val();
-	console.log(name+" "+pw);
+	
+	socket.emit('signup',{user:name,password:pw});
+    })
+    $('#login').click(function(e){
+	var name= $('#userInput').val();
+	var pw = $('#passwordInput').val();
 	socket.emit('login',{user:name,password:pw});
 	
-	
-    }
-		      )});
+    })
+}
+		  
+		 );
 		     
 		      
 

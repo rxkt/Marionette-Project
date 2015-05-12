@@ -1,4 +1,4 @@
-from pymongo import Mongoclient
+from pymongo import MongoClient
 
 client = MongoClient()
 db=client['account_manager']
@@ -6,7 +6,7 @@ users=db['users']
 
 def new_user(user_params):
     user_id=users.insert(user_params)
-    return user
+    return user_id
 
 def find_user(criteria):
     user= users.find_one(criteria)

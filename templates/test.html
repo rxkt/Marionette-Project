@@ -9,7 +9,7 @@
   </head>
   
   <body>
-    {% if session['username'] %}
+    {% if 'username' not in session %}
     <!--Form here-->
     <div id='loginform'></div>
     <input type='text' id='userInput' placeholder='Username'>

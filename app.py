@@ -14,11 +14,15 @@ socketio = SocketIO(app)
 
 @app.route("/")
 def mainpage():
+    if 'username' in session:
+            print session['username']
+    else: print "not in session"
+    
     return render_template("test.html")
 
 @socketio.on('signup')
 def home(userpassword={'user':None,'password':None}):
-    db.new_user("username":str(userpassword['user']),"password":str(userpassword['password']))
+    db.new_user({"username":userpassword['user'],"password":userpassword['password']})
     print("You are now signed up")
     return redirect('/')
 @socketio.on('login')
@@ -26,7 +30,8 @@ def login(userpassword={'user':None,'password':None}):
     criteria={'username':str(userpassword['user']),'password':str(userpassword['password'])}
     user=db.find_user(criteria)
     session['username']=criteria['username']
-    redirect('/')
+    print(session['username'])
+    return redirect('/')
 
 
         
@@ -36,5 +41,7 @@ def login(userpassword={'user':None,'password':None}):
 if __name__ == "__main__":
     app.secret_key='B&S'
     app.debug = True
+    
     socketio.run(app)
+    app.run()
     
