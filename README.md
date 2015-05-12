@@ -22,6 +22,7 @@ Softdev Period 5
 
 5/11 : Moved to MongoDB? maybe. Framework practically complete.
 
+5/12 : HTML basic layout, needs spicing up + css/javascript (most likely marionette)
 5/15 - 5/17 : Finish css/design of pages. Make everything look good.
 
 5/17 : Begin adding the extra features behind the design, such as buying/selling , stats of the user , location (seller/buyer wants to meet) , items user has bid on / is selling , etc.
