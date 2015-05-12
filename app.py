@@ -1,3 +1,4 @@
+import db
 from flask import Flask, render_template , session , redirect , request
 from flask.ext.socketio import SocketIO, emit
 """
@@ -8,21 +9,32 @@ firebase = firebase.FirebaseApplication('https://boiling-heat-3848.firebaseio.co
 """
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'hello'
+app.config['SECRET_KEY'] = 'B&S'
 socketio = SocketIO(app)
 
 @app.route("/")
+def mainpage():
+    return render_template("test.html")
+
+@socketio.on('signup')
+def home(userpassword={'user':None,'password':None}):
+    db.new_user("username":str(userpassword['user']),"password":str(userpassword['password']))
+    print("You are now signed up")
+    return redirect('/')
 @socketio.on('login')
-def home(emailpassword={'email':None,'password':None}):
-    if 'username' in session:
-        print("chris is a bum")
-       ## print('test: ' + str(email) + "  " + str(password))
-        return render_template("test.html")
-    else:
-        print('test: ' + str(emailpassword['email']) + "  " + str(emailpassword['password']))
-        return render_template("test.html")
+def login(userpassword={'user':None,'password':None}):
+    criteria={'username':str(userpassword['user']),'password':str(userpassword['password'])}
+    user=db.find_user(criteria)
+    session['username']=criteria['username']
+    redirect('/')
+
+
+        
+        
+        
 
 if __name__ == "__main__":
+    app.secret_key='B&S'
     app.debug = True
     socketio.run(app)
     
