@@ -9,8 +9,9 @@
   </head>
   
   <body>
-    {% if 'username' not in session %}
+    {% if inses==False %}
     <!--Form here-->
+    {{ inses }}
     <div id='loginform'></div>
     <input type='text' id='userInput' placeholder='Username'>
     <input type='password' id='passwordInput' placeholder='Password'>
