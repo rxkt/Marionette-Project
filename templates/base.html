@@ -9,11 +9,17 @@
     <!--[if lte IE 8]>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
 	<![endif]-->
-	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
 
     
     <script async="" src="//www.google-analytics.com/analytics.js"></script>
-    <title> B/S Home  </title>
+    
+    
+    <title>
+      B/S Home
+    </title>
+    
+    
   </head>
 
   <body>
@@ -36,13 +42,12 @@
 	</style>
       </div>
       
-      <div id="nav" class="pure-u">
+      <div id="menubar" class="pure-u-1-5">
 	<div class="nav-inner">
 	  <div class="pure-menu">
+	    <a class="pure-menu-heading" href="/"> B/S
+	    </a>
 	    <ul class="pure-menu-list">
-	      
-	      <li class="pure-menu-heading"> Menu
-	      </li>
 	      <li class="pure-menu-item">
 		<a href="#" class="pure-menu-link">
 		  Home
@@ -52,7 +57,7 @@
 	      <li class="pure-menu-item">
 		<a href="#" class="pure-menu-link">
 		  Browse  
-		  <span class="email-count"> (notification # goes here)
+		  <span class="email-count">
 		  </span>
 		</a>
 	      </li>
@@ -60,7 +65,7 @@
 	      <li class="pure-menu-item">
 		<a href="#" class="pure-menu-link">
 		  Items You're Watching  
-		  <span class="email-count"> (notification # goes here)
+		  <span class="email-count">
 		  </span>
 		</a>
 	      </li>
@@ -68,7 +73,7 @@
 	      <li class="pure-menu-item">
 		<a href="#" class="pure-menu-link">
 		  Messages 
-		  <span class="email-count"> (notification # goes here)
+		  <span class="email-count">
 		  </span>
 		</a>
 	      </li>
@@ -85,7 +90,7 @@
       </div>
 
       <!--this is for the Items You're Watching Tab-->
-      <div id="list" class="pure-u-1">
+      <div id="list" class="pure-u-1-5">
 	<div class="email-item email-item-selected pure-g">
 	  <div class="pure-u">
 	    <img class="email-avatar" alt="Image of Item Here" height="64" width="64" src="/img/item1.png">
@@ -113,13 +118,24 @@
 	
       </div>
 
-      <div id="main" class="pure-u-1">
+      <div id="info" class="pure-u-3-5">
 	<div class="email-content">
 	  <div class="email-content-header pure-g">
-	    <div class="pure-u-1-2">
+	    <div class="pure-u-1">
 	      <h1 class="email-content-title"> Name of Item here </h1>
-	      <p class="email-content-subtitle">
+	      <h5 class="email-content-subtitle">
 		Name of User here
+	      </h5>
+	    </div>
+	    <div class="pure-u-1">
+	      <img class="email-avatar" alt="Image of Item Here" height="64" width="64" src="/img/item1.png">
+	    </div>
+	    <div class="pure-u-1-2">
+	      <h4 class="email-content-subtitle">
+		Description
+	      </h4>
+	      <p>
+		The description of the item goes here.
 	      </p>
 	    </div>
 	    <div class="email-content-controls pure-u-1-2">
@@ -135,5 +151,6 @@
       
     </div>
   </body>
+  
   
 </html>
