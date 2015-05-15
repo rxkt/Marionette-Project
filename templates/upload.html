@@ -96,62 +96,40 @@
 	</div>
       </div>
 
-      <!--this is for the Items You're Watching Tab-->
-      <div id="list" class="pure-u-1-5">
-	<div class="email-item email-item-selected pure-g">
-	  <div class="pure-u">
-	    <img class="email-avatar" alt="Image of Item Here" height="64" width="64" src="/img/item1.png">
-	  </div>
-	  <div class="pure-u-3-4">
-	    <h5 class="email-name"> Name of Seller </h5>
-	    <h4 class="email-subject"> Name of Item </h4>
-	    <p class="email-desc">
-	      Time left on bidding goes here
-	    </p>
-	  </div>
-	</div>
-	<div class="email-item pure-g">
-	  <div class="pure-u">
-	    <img class="email-avatar" alt="Image of Item Here" height="64" width="64" src="/img/item1.png">
-	  </div>
-	  <div class="pure-u-3-4">
-	    <h5 class="email-name"> Name of Seller </h5>
-	    <h4 class="email-subject"> Name of Item </h4>
-	    <p class="email-desc">
-	      Time left on bidding goes here
-	    </p>
-	  </div>
-	</div>
-	
-      </div>
-
-      <div id="info" class="pure-u-3-5">
+      <div id="info" class="pure-u-4-5">
 	<div class="email-content">
 	  <div class="email-content-header pure-g">
 	    <div class="pure-u-1">
-	      <h1 class="email-content-title"> Name of Item here </h1>
+	      <h1 class="email-content-title"> Post a new Listing </h1>
 	      <h5 class="email-content-subtitle">
 		Name of User here
 	      </h5>
 	    </div>
-	    <div class="pure-u-1">
-	      <img class="email-avatar" alt="Image of Item Here" height="64" width="64" src="/img/item1.png">
-	    </div>
+	    
 	    <div class="pure-u-1-2">
-	      <h4 class="email-content-subtitle">
-		Description
-	      </h4>
+	      <h3 class="email-content-subtitle">
+		New Listing
+	      </h3>
+	      
 	      <p>
-		The description of the item goes here.
+		stuff about your upload here
 	      </p>
-	    </div>
-	    <div class="email-content-controls pure-u-1-2">
 	      
+	      <h4 class="email-content-subtitle">
+		Upload Image of Item
+	      </h4>
+	      <form action="upload.php" method="post" enctype="multipart/form-data">
+		<input type="file" name="fileToUpload" id="fileToUpload">
+		<input type="submit" value="Upload Image" name="submit">
+	      </form>
+	    </div>
+
+	    <div class="email-content-controls pure-u-1">
 	      <a class="button-success pure-button">
-		Buy
+		Post
 	      </a>
-	      
 	    </div>
+	    
 	  </div>
 	</div>
       </div>
