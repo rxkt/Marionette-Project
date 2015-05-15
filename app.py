@@ -36,8 +36,15 @@ def login(userpassword={'user':None,'password':None}):
     session['username']=criteria['username']
    
     mainpage()
-    
 
+@socketio.on('additem')
+def addItem(itemvalues={'name':None,'price':None,'seller':None}):
+    itemvalues['seller']= session['username']
+    if(itemsvalues['name']!= None){
+            item= db.new_item(itemvalues)
+            }
+    
+    
 
         
         
