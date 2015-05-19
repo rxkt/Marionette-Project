@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,17 +9,13 @@
   </head>
   
   <body>
-    {% if inses==False %}
     <!--Form here-->
-    {{ inses }}
+    {{ test2 }}
     <div id='loginform'></div>
     <input type='text' id='userInput' placeholder='Username'>
     <input type='password' id='passwordInput' placeholder='Password'>
     <input type='submit' id='signup' value='Signup'>
     <input type='submit' id='login' value='Login'>
-    {% else %}
-    YOU ARE LOGGED IN
-    {% endif %}
     <br>
     <script src="/static/database1.js"></script>
     <br>

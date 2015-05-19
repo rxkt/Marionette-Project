@@ -16,10 +16,19 @@ $(document).ready(function(){
 	socket.emit('login',{user:name,password:pw});
 	
     })
-}
+
+
+socket.on('redirect',function (data) {
+    console.log('a');
+    console.log(window.location.href);
+    console.log(data['url']);
+    window.location.assign('http://localhost:5000/test');
+});
+
+});
 		  
-		 );
-		     
+		 
+
 		      
 
    
