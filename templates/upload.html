@@ -26,7 +26,13 @@
     <div id="layout" class="content pure-g">
       <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div>
       <div>
-	<style scoped>
+	<style>
+
+	  .pure-menu {
+	  float: left;
+	  display: block;
+	  width: auto;
+	  }
 	  
 	  .button-success {
 	  border-radius: 4px;
@@ -107,24 +113,73 @@
 	    </div>
 	    
 	    <div class="pure-u-1-2">
-	      <h3 class="email-content-subtitle">
-		New Listing
+	      <h2 class="email-content-subtitle">
+		NEW LISTING
 	      </h3>
 	      
-	      <p>
-		stuff about your upload here
-	      </p>
-	      
-	      <h4 class="email-content-subtitle">
-		Upload Image of Item
-	      </h4>
 	      <form action="upload.php" method="post" enctype="multipart/form-data">
+		
+		<h4 class="email-content-subtitle">
+		  Name of item:
+		</h4>
+		<input type="text" name="name">
+		<br>
+
+		<h4 class="email-content-subtitle">
+		  Item Category:
+		</h4>
+		
+		<input type="radio" name="type" value="literature">
+		Literature
+		<br>
+		<input type="radio" name="type" value="clothing">
+		Clothing & Accessories
+		<br>
+		<input type="radio" name="type" value="electronics">
+		Electronics
+		<br>
+		<input type="radio" name="type" value="misc" checked>
+		Misc.
+		<br>
+
+		<h4 class="email-content-subtitle">
+		  Condition:
+		</h4>
+		
+		<input type="radio" name="cond" value="new">
+		New
+		<br>
+		<input type="radio" name="cond" value="mint">
+		Like New
+		<br>
+		<input type="radio" name="cond" value="used">
+		Used
+		<br>
+		<input type="radio" name="cond" value="other">
+		Other (see description)
+		<br>
+
+		<h4 class="email-content-subtitle">
+		  Price/Starting Offer:
+		</h4>
+		<input type="text" name="desc" size="6">
+		
+		<h4 class="email-content-subtitle">
+		  Description:
+		</h4>
+		<input type="text" name="desc" size="50">
+		
+		<h4 class="email-content-subtitle">
+		  Upload Image of Item
+		</h4>
+		
 		<input type="file" name="fileToUpload" id="fileToUpload">
 		<input type="submit" value="Upload Image" name="submit">
 	      </form>
 	    </div>
 
 	    <div class="email-content-controls pure-u-1">
+	      <br>
 	      <a class="button-success pure-button">
 		Post
 	      </a>
