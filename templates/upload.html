@@ -22,37 +22,52 @@
     
   </head>
 
+  <style>
+
+    #layout {
+    position: relative
+    }
+
+    .pure-menu {
+    float: left;
+    display: block;
+    width: auto;
+    position: fixed;
+    background: none repeat scroll 0 0 #E6E6E6;
+    }
+
+    .email-content {
+    display: block;
+    width: auto;
+    overflow: hidden;
+    background: none repeat scroll 0 0;
+    }
+    
+    .button-success {
+    border-radius: 4px;
+    font-size: 125%;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    .button-error {
+    }
+    .button-warning {
+    }
+    .button-secondary {
+    }
+  </style>
+  
   <body>
     <div id="layout" class="content pure-g">
-      <div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div>
-      <div>
-	<style>
 
-	  .pure-menu {
-	  float: left;
-	  display: block;
-	  width: auto;
-	  }
-	  
-	  .button-success {
-	  border-radius: 4px;
-	  font-size: 125%;
-	  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-	  }
-	  .button-error {
-	  }
-	  .button-warning {
-	  }
-	  .button-secondary {
-	  }
-	</style>
-      </div>
-      
       <div id="menubar" class="pure-u-1-5">
 	<div class="nav-inner">
 	  <div class="pure-menu">
-	    <a class="pure-menu-heading" href="/"> B/S
+	    <a class="pure-menu-heading" href="/">
+	      <center>
+		B/S
+	      </center>
 	    </a>
+	    <br>
 	    <ul class="pure-menu-list">
 	      
 	      <li class="pure-menu-item">
@@ -60,13 +75,17 @@
 		  Home
 		</a>
 	      </li>
-
+	      
+	      <br>
+	      
 	       <li class="pure-menu-item">
 		<a href="#" class="pure-menu-link">
 		  My Listings
 		</a>
 	      </li>
 
+	       <br>
+	       
 	      <li class="pure-menu-item">
 		<a href="#" class="pure-menu-link">
 		  Browse Listings
@@ -74,6 +93,8 @@
 		  </span>
 		</a>
 	      </li>
+
+	      <br>
 	      
 	      <li class="pure-menu-item">
 		<a href="#" class="pure-menu-link">
@@ -82,6 +103,8 @@
 		  </span>
 		</a>
 	      </li>
+
+	      <br>
 	      
 	      <li class="pure-menu-item">
 		<a href="#" class="pure-menu-link">
@@ -90,12 +113,16 @@
 		  </span>
 		</a>
 	      </li>
+
+	      <br>
 	      
 	      <li class="pure-menu-item">
 		<a href="#" class="pure-menu-link">
 		  Logout  
 		</a>
 	      </li>
+
+	      <br>
 	      
 	    </ul>
 	  </div>
@@ -103,94 +130,96 @@
       </div>
 
       <div id="info" class="pure-u-4-5">
-	<div class="email-content">
-	  <div class="email-content-header pure-g">
-	    <div class="pure-u-1">
-	      <h1 class="email-content-title"> Post a new Listing </h1>
-	      <h5 class="email-content-subtitle">
-		Name of User here
-	      </h5>
-	    </div>
-	    
-	    <div class="pure-u-1-2">
-	      <h2 class="email-content-subtitle">
-		NEW LISTING
-	      </h3>
-	      
-	      <form action="upload.php" method="post" enctype="multipart/form-data">
-		
-		<h4 class="email-content-subtitle">
-		  Name of item:
-		</h4>
-		<input type="text" name="name">
-		<br>
-
-		<h4 class="email-content-subtitle">
-		  Item Category:
-		</h4>
-		
-		<input type="radio" name="type" value="literature">
-		Literature
-		<br>
-		<input type="radio" name="type" value="clothing">
-		Clothing & Accessories
-		<br>
-		<input type="radio" name="type" value="electronics">
-		Electronics
-		<br>
-		<input type="radio" name="type" value="misc" checked>
-		Misc.
-		<br>
-
-		<h4 class="email-content-subtitle">
-		  Condition:
-		</h4>
-		
-		<input type="radio" name="cond" value="new">
-		New
-		<br>
-		<input type="radio" name="cond" value="mint">
-		Like New
-		<br>
-		<input type="radio" name="cond" value="used">
-		Used
-		<br>
-		<input type="radio" name="cond" value="other">
-		Other (see description)
-		<br>
-
-		<h4 class="email-content-subtitle">
-		  Price/Starting Offer:
-		</h4>
-		<input type="text" name="desc" size="6">
-		
-		<h4 class="email-content-subtitle">
-		  Description:
-		</h4>
-		<input type="text" name="desc" size="50">
-		
-		<h4 class="email-content-subtitle">
-		  Upload Image of Item
-		</h4>
-		
-		<input type="file" name="fileToUpload" id="fileToUpload">
-		<input type="submit" value="Upload Image" name="submit">
-	      </form>
-	    </div>
-
-	    <div class="email-content-controls pure-u-1">
-	      <br>
-	      <a class="button-success pure-button">
-		Post
-	      </a>
-	    </div>
-	    
+	<div class="email-content">  
+	  
+	  <div class="pure-u-1">
+	    <h1 class="email-content-title"> Post a new Listing </h1>
+	    <h5 class="email-content-subtitle">
+	      Name of User here
+	    </h5>
 	  </div>
+	  
+	  <div class="pure-u-1-2">
+	    <h2 class="email-content-subtitle">
+	      NEW LISTING
+	    </h2>
+	    
+	    <form action="upload.php" method="post" enctype="multipart/form-data">
+	      
+	      <h4 class="email-content-subtitle">
+		Name of item:
+	      </h4>
+	      <input type="text" name="name">
+	      <br>
+
+	      <h4 class="email-content-subtitle">
+		Item Category:
+	      </h4>
+	      
+	      <input type="radio" name="type" value="literature">
+	      Literature
+	      <br>
+	      <input type="radio" name="type" value="clothing">
+	      Clothing & Accessories
+	      <br>
+	      <input type="radio" name="type" value="electronics">
+	      Electronics
+	      <br>
+	      <input type="radio" name="type" value="misc" checked>
+	      Misc.
+	      <br>
+
+	      <h4 class="email-content-subtitle">
+		Condition:
+	      </h4>
+	      
+	      <input type="radio" name="cond" value="new">
+	      New
+	      <br>
+	      <input type="radio" name="cond" value="mint">
+	      Like New
+	      <br>
+	      <input type="radio" name="cond" value="used">
+	      Used
+	      <br>
+	      <input type="radio" name="cond" value="other" checked>
+	      Other (see description)
+	      <br>
+
+	      <h4 class="email-content-subtitle">
+		Price/Starting Offer:
+	      </h4>
+	      <input type="text" name="desc" size="6">
+	      
+	      <h4 class="email-content-subtitle">
+		Description:
+	      </h4>
+	      <input type="text" name="desc" size="50">
+	      
+	      <h4 class="email-content-subtitle">
+		Upload Image of Item
+	      </h4>
+	      
+	      <input type="file" name="fileToUpload" id="fileToUpload">
+	      <input type="submit" value="Upload Image" name="submit">
+	    </form>
+	  </div>
+
+	  <div class="email-content-controls pure-u-1">
+	    <br>
+	    <a class="button-success pure-button">
+	      Post
+	    </a>
+	  </div>
+	  
 	</div>
+	
+      </div>
+      
       </div>
       
     </div>
   </body>
   
-  
+
 </html>
