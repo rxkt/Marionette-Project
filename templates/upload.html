@@ -6,21 +6,20 @@
    {% if error == True %}
    Please fill all the fields correctly!
    {% endif %}
-    
+    <form method="POST">
     <div class="pure-u-1-2">
-      <h2 class="email-content-subtitle">
+      <h2>
 	NEW LISTING
       </h2>
       
 	
-	<h4 class="email-content-subtitle">
+	<h4>
 	  Name of item:
 	</h4>
 	<input type="text" name="name" placeholder='Name of item'>
 	<br>
 
-	<h4 class="email-content-subtitle">
-	  Item Category:
+	<h4> Item Category:
 	</h4>
 
 	<!--TURN THIS INTO TEXT BOX-->
@@ -62,18 +61,10 @@
 	Description:
 	
 	<input type="text" name="desc" placeholder='Describe your item' size=50>
-
-	
-	
-	
-
-    </div>
-
-    
-      <br><br>
+	<br><br>
       <input type="submit" name="button" class="pure-button pure-button-primary" value="Submit">
       </form>
-    
+    </div> 
     
   </div>
   

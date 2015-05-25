@@ -25,5 +25,15 @@ def find_item(criteria):
 def new_item(item_params):
     item= items.insert(item_params)
     return item
+def all_items():
+    itemList=[]
+    for item in items.find():
+        itemList.append([item['seller'],item['name'],item['category'],item['desc'],item['quantity'],item['cond'],item['price']])
+    return itemList
+def view_items(user):
+    itemList=[]
+    for item in items.find({"seller":user}):
+        itemList.append([item['name'],item['category'],item['desc'],item['quantity'],item['cond'],item['price']])
+    return itemList
 
 

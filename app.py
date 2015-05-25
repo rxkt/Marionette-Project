@@ -17,7 +17,6 @@ def authenticate(func):
 
 
 @app.route("/login",methods=['GET','POST'])
-
 def login():
     if request.method== 'POST':
         
@@ -45,7 +44,6 @@ def login():
         return render_template('login.html')
         
 @app.route('/register', methods=['GET', 'POST'])
-
 def register():
     if request.method == 'GET':
         
@@ -74,12 +72,21 @@ def register():
 @app.route("/home")
 def home():
   return render_template('home.html')
+@authenticate
+@app.route("/view_items")
+def view_items():
+    itemList= db.view_items(session['username'])
+    return render_template('view_items.html',itemList=itemList)
+@authenticate
+@app.route("/all_items")
+def all_items():
+    itemList= db.all_items()
+    return render_template('all_items.html',itemList=itemList)
 @authenticate 
 @app.route("/upload",methods=['GET','POST'])
 def upload():
     if request.method == 'GET':
-        
-        return render_template('upload.html')
+        return render_template('upload.html',error=False)
     button = request.form['button']
     name= request.form['name']
     category= request.form['category']
@@ -90,9 +97,10 @@ def upload():
     if not price or not desc or not quan:
         return render_template('upload.html',error=True)
     else:
-        item_params={'name':name,'category':category,'desc':desc,'quantity':quan,'cond':cond,'price':price}
-        db.new_item(item_params)
-        print('Added new item')
+        item_params={'name':name,'category':category,'desc':desc,'quantity':quan,'cond':cond,'price':price,'seller':session['username']}
+        item = db.new_item(item_params)
+        print(item)
+        
         return redirect('/upload')
     
 if __name__ == "__main__":
