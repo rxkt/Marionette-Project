@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--using Pure CSS-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+    
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    
+    
+    <title>
+      B/S Home
+    </title>
+    
+    
+  </head>
+
+  <style>
+
+    #layout {
+    position: relative;
+    }
+
+    #menubar {
+    width: 250px;
+    height: 400px;
+    }
+    
+    .pure-menu {
+    float: left;
+    width: 200px;
+    height: 400px;
+    position: fixed;
+    background: none repeat scroll 0 0 #E6E6E6;
+    }
+
+    
+    
+    
+    
+    
+  </style>
+  
+  <body>
+    <div id="layout" class="content pure-g">
+
+      <div id="menubar" class="pure-u-1-5">
+	<div class="nav-inner">
+	  <div class="pure-menu">
+	    <a class="pure-menu-heading" href="/">
+	      <center>
+		B/S
+	      </center>
+	    </a>
+	    <br>
+	    <ul class="pure-menu-list">
+	      
+	      <li class="pure-menu-item">
+		<a href="/home" class="pure-menu-link">
+		  Home
+		</a>
+	      </li>
+	      
+	      <br>
+	      
+	      <li class="pure-menu-item">
+		<a href="#" class="pure-menu-link">
+		  My Listings
+		</a>
+	      </li>
+
+	      <br>
+	      
+	      <li class="pure-menu-item">
+		<a href="#" class="pure-menu-link">
+		  Browse Listings
+		  
+		</a>
+	      </li>
+	      <br>
+	      <li class="pure-menu-item">
+		<a href="/upload" class="pure-menu-link">
+		  Add A Listing
+		
+		</a>
+	      </li>
+
+	      <br>
+	      
+	      <li class="pure-menu-item">
+		<a href="#" class="pure-menu-link">
+		  Items You're Watching  
+		  
+		</a>
+	      </li>
+
+	      <br>
+	      
+	      <li class="pure-menu-item">
+		<a href="#" class="pure-menu-link">
+		  Messages 
+	
+		</a>
+	      </li>
+
+	      <br>
+	      
+	      <li class="pure-menu-item">
+		<a href="#" class="pure-menu-link">
+		  Logout  
+		</a>
+	      </li>
+
+	      
+	      
+	    </ul>
+	  </div>
+	</div>
+      
+      </div>
+{% block body %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,9 @@
+{% extends "setup.html" %}
+{% block body %}
+<div id="info" class="pure-u-2-5">
+  <h2>Home Page</h2>
+      <p> Welcome to StuyBS, a site created for Stuyvesant students to buy and sell their things rather than having to use a facebook group!
+</p></div>
+
+
+{% endblock %}

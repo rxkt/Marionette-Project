@@ -2,26 +2,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Signup/Login demo </title>
+    <title> Register </title>
   </head>
-  
+ {% block title %}
+  {% if error == "username taken" %}
+  That username has been taken. Please select another username.
+  {% elif error == "incomplete" %}
+  Please complete the required fields.
+  {% endif %}
   <body>
-  
+  <form method ="POST">
     <div id='loginform'></div>
     <input type='text' name='username' placeholder='Username'>
-    <input type='password' name='passwordInput' placeholder='Password'>
-    <input type='submit' name='signup' value='Signup'>
-    <input type='submit' name='login' value='Login'>
-    {% else %}
-    YOU ARE LOGGED IN
-    {% endif %}
+    <br>
+    <input type='password' name='password' placeholder='Password'>
+    <br>
+    <input type='text' name='first' placeholder='First Name'>
+    <br>
+    <input type='text' name='last' placeholder='Last Name'>
+    <br>
+    <input type='submit' name='button' value='Signup'>
+    <br>
+    <input type='submit' name='button' value='Cancel'>
+   
     <br>
     <script src="/static/database1.js"></script>
     <br>
-    
+  </form>  
   </body>
+ {% endblock %}
   
 </html>
 
 
-<!-- <script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script> --!>
+
