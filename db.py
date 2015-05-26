@@ -2,10 +2,10 @@ from pymongo import MongoClient
 
 client = MongoClient()
 db=client['account_manager']
-
 users=db['users']
 transactions=db['transactions']
 items =db['items']
+messages=db['messages']
 def new_user(user_params):
     user_id=users.insert(user_params)
     return user_id
@@ -22,7 +22,8 @@ def find_transactions(criteria):
     trans= transactions.find(criteria)
     return trans
 def new_trans(criteria):
-    trans=transactions.insert(criteria)
+    crit={'buyer':criteria[7],'seller':criteria[0],'name':criteria[1],'category':criteria[2],'desc':criteria[3],'quantity':criteria[4],'cond':criteria[5],'price':criteria[6]}
+    trans=transactions.insert(crit)
     return trans
 def all_trans(name):
     transList=[]
@@ -32,7 +33,7 @@ def all_trans(name):
         transList.append(trans)
     return transList
 def find_item(criteria):
-    item= items.find(criteria)
+    item= items.find_one(criteria)
     return item
 def new_item(item_params):
     item= items.insert(item_params)
@@ -49,3 +50,10 @@ def view_items(user):
     return itemList
 
 
+def view_messages(user):
+    messageList=[]
+    for item in messages.find({"reciever":user}):
+        messageList.append(item)
+        
+        
+    return messageList

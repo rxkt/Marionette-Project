@@ -6,6 +6,8 @@
 <head>
 <h4>Your Transactions</h4>
 </head>
+<form method='POST'>
+<input type='submit' name='button' value='Submit Changes'>
 <br><br>
 <body>
 {% if error == "None" %}
@@ -28,7 +30,7 @@ Transactions Completed!
       <th>Completion</th>
     </tr>
   </thead>
-<form method='POST'>
+
 <tbody>
     {% for items in tran %}
 
@@ -42,7 +44,7 @@ Transactions Completed!
       <td>{{items['cond']}}</td>
       <td>{{items['price']}}</td>
       {% if items['seller']==user %}
-      <td><input type='checkbox' name='{{items['name']}}fin'></td>
+      <td><input type='checkbox' name='{{items['name']}}fin'>Completed</td>
     {% else %}
       <td></td>
       {% endif %}

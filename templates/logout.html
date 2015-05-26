@@ -1,0 +1,20 @@
+{% extends "setup.html" %}
+
+
+
+
+
+{% block body %}
+<div id='hai' class='pure-u-3-5'>
+<body>
+Log Out<br><br>
+{% if logged_out %}
+You have logged out.
+
+{% else %}
+You are not logged in.
+
+{% endif %}
+</body>
+</div>
+{% endblock %}

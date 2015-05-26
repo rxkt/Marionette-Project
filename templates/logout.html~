@@ -1,0 +1,17 @@
+{% extends "setup.html" %}
+
+
+
+
+
+{% block body %}
+Log Out
+{% if logged_out %}
+You have logged out.
+
+{% else %}
+You are not logged in.
+
+{% endif %}
+
+{% endblock %}

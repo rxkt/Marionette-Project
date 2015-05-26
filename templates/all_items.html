@@ -15,6 +15,9 @@ One or more of your items have been taken,please resubmit your transactions.
 {% elif error=="Added" %}
 Your transactions have been added! Be sure to message your seller(s) to complete your transactions.
 {% endif %}
+<form method='POST'>
+  <input type='submit' name='button' value='Submit Changes'>
+  <br><br>
 <table class="pure-table" width=1000 height=100>
   <thead>
     <tr>
@@ -28,9 +31,7 @@ Your transactions have been added! Be sure to message your seller(s) to complete
       <th>Add to Transactions</th>
     </tr>
   </thead>
-<form method='POST'>
-  <input type='submit' name='button' value='Submit Changes'>
-  <br><br>
+
 <tbody>
     {% for items in itemList %}
 
@@ -43,7 +44,7 @@ Your transactions have been added! Be sure to message your seller(s) to complete
       <td>{{items[5]}}</td>
        <td>$ {{items[6]}}</td>
        {% if items[0]!= user %}
-      <td><input type='checkbox' name="{{items[0]}}add"> Add to Cart </td>  
+      <td><input type='checkbox' name="{{items[1]}}add"> Add </td>  
       {% else %}
       <td></td>
       {% endif%}

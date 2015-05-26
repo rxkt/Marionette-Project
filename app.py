@@ -41,7 +41,7 @@ def login():
     else:
         if 'username' in session:
             return redirect('/home')
-        return render_template('login.html',error='Insession')
+        return render_template('login.html')
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
@@ -65,7 +65,7 @@ def register():
             user_params = {'username': username, 'password': password, 'first': first, 'last': last}
             db.new_user(user_params)
             
-            return render_template('login.html',error="created")
+            return redirect('/')
 
 @authenticate 
 @app.route("/home")
@@ -95,14 +95,16 @@ def all_items():
         if add==True:
             toAdd.append(items)
     if len(toAdd)==0:
-        return render_template('all_items.html',error='None')
+        return render_template('all_items.html',error='None',itemList=itemList,user=user)
     for add in toAdd:
+       
         try:
-            exist= db.find_items({'name':add[1]})
+            exist= db.find_item({'name':add[1]})
         except:
-            return render_template('all_items.html',error='Taken')
+            return render_template('all_items.html',itemList=itemList,user=user,error='Taken')
     for add in toAdd:
-        add['buyer']=session['username']
+        
+        add.append(session['username'])
         db.new_trans(add)
         db.items.remove({'name':add[1]})
     return render_template('all_items.html',error='Added')
@@ -115,20 +117,22 @@ def trans():
     if request.method=='GET':
         
         return render_template('trans.html',tran=tran,user=session['username'])
-    toHis= []
+    toHis=[]
     for trans in tran:
         try:
-            request.form[str(tran['name'])+'add']
+            
+            request.form[str(trans['name'])+'fin']
             his= True
         except:
             his=False
         if his==True:
-            toHis.append[trans]
+            toHis.append(trans)
     if len(toHis)==0:
-        return render_template('trans.html',error='None')
+        return render_template('trans.html',tran=tran,user=session['username'],error='None')
     for his in toHis:
         db.transactions.remove({'name':his['name']})
-        return render_template('trans.html',error='Complete')
+    tran=db.all_trans(session['username'])
+    return render_template('trans.html',tran=tran,user=session['username'],error='Complete')
   
     
     
@@ -147,15 +151,34 @@ def upload():
     if not price or not desc or not quan or not name:
         return render_template('upload.html',error="Wrong info")
     if db.find_item({'name':name}):
+        print db.find_item({'name':name})
         return render_template('upload.html',error="Name Taken")
     
     else:
         item_params={'name':name,'category':category,'desc':desc,'quantity':quan,'cond':cond,'price':price,'seller':session['username']}
         item = db.new_item(item_params)
-        print(item)
+        
         
         return redirect('/upload')
+@authenticate
+@app.route('/message',methods=['POST','GET'])
+def message():
+    messageList= db.view_messages(session['username'])
     
+    if request.method=='GET':
+        
+        return render_template('message.html',itemList=messageList)
+    reciever=request.form['reciever']
+    message=request.form['message']
+    if not message or not reciever:
+        return render_template('message.html',itemList=messageList,error='None')
+    db.messages.insert({'reciever':reciever,'message':message,'sender':session['username']})
+    return render_template('message.html',itemList=messageList,error='Sent')
+@authenticate
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect('/')   
 if __name__ == "__main__":
     app.secret_key='B&S'
     app.debug = True
