@@ -78,10 +78,46 @@ def view_items():
     itemList= db.view_items(session['username'])
     return render_template('view_items.html',itemList=itemList)
 @authenticate
-@app.route("/all_items")
+@app.route("/all_items", methods=['GET','POST'])
 def all_items():
+    user=session['username']
     itemList= db.all_items()
-    return render_template('all_items.html',itemList=itemList)
+    if request.method=='GET':
+       
+        return render_template('all_items.html',itemList=itemList,user=user)
+    toAdd={}
+    button=request.form['button']
+    for items in itemList:
+        try:
+            request.form[str(items[1])+"add"]
+            add=True
+        except:
+            add=False
+        if add==True:
+            toAdd.append(items)
+    if len(toAdd)==0:
+        return render_template('all_items.html',error='None')
+    for add in toAdd:
+        try:
+            exist= db.find_items({'name':add[1]})
+        except:
+            return render_template('all_items.html',error='Taken')
+    for add in toAdd:
+        add['buyer']=session['username']
+        db.new_trans(add)
+        db.items.remove({'name':add[1]})
+    return render_template('all_items.html',error='Added')
+        
+@authenticate
+@app.route('/trans',methods=['GET','POST'])
+def trans():
+    tran=db.all_trans(session['username'])
+    if request.method=='GET':
+        
+        return render_template('trans.html',tran=tran)
+
+    
+    
 @authenticate 
 @app.route("/upload",methods=['GET','POST'])
 def upload():
@@ -94,8 +130,11 @@ def upload():
     quan= request.form['quantity']
     cond= request.form['cond']
     price=request.form['price']
-    if not price or not desc or not quan:
-        return render_template('upload.html',error=True)
+    if not price or not desc or not quan or not name:
+        return render_template('upload.html',error="Wrong info")
+    if db.find_item({'name':name}):
+        return render_template('upload.html',error="Name Taken")
+    
     else:
         item_params={'name':name,'category':category,'desc':desc,'quantity':quan,'cond':cond,'price':price,'seller':session['username']}
         item = db.new_item(item_params)

@@ -3,8 +3,11 @@
 <div id="info" class="pure-u-2-5">
   <div class="email-content">  
     
-   {% if error == True %}
+   {% if error == "Wrong info" %}
    Please fill all the fields correctly!
+   {% elif error== "Name Taken" %}
+   This name is taken. Please choose another!
+   
    {% endif %}
     <form method="POST">
     <div class="pure-u-1-2">

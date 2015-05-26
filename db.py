@@ -4,7 +4,7 @@ client = MongoClient()
 db=client['account_manager']
 
 users=db['users']
-
+transactions=db['transactions']
 items =db['items']
 def new_user(user_params):
     user_id=users.insert(user_params)
@@ -18,7 +18,19 @@ def find_user(criteria):
 def find_things(criteria):
     things=users.find(criteria)
     return things
-
+def find_transactions(criteria):
+    trans= transactions.find(criteria)
+    return trans
+def new_trans(criteria):
+    trans=transactions.insert(criteria)
+    return trans
+def all_trans(name):
+    transList=[]
+    for trans in transactions.find({'buyer':name}):
+        transList.append(trans)
+    for trans in transactions.find({'seller':name}):    
+        transList.append(trans)
+    return transList
 def find_item(criteria):
     item= items.find(criteria)
     return item

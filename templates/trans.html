@@ -1,0 +1,46 @@
+{% extends "setup.html" %}
+
+{% block body %}
+
+<div id="hai" class="pure-u-3-5">
+<head>
+<h4>Your Transactions</h4>
+</head>
+<br><br>
+<body>
+
+<table class="pure-table" width=1000 height=100>
+  <thead>
+    <tr>
+      <th>Seller</th>
+      <th>Buyer</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>Condition</th>
+      <th> Price</th>
+      </tr>
+  </thead>
+<form method='POST'>
+<tbody>
+    {% for items in tran %}
+
+    <tr>
+      <td>{{items['seller']}}</td>
+      <td>{{items['buyer']}}</td>
+      <td>{{items['name']}}</td>
+      <td>{{items['category']}}</td>
+      <td>{{items['desc']}}</td>
+      <td>{{items['quantity']}}</td>
+      <td>{{items['cond']}}</td>
+      <td>{{items['price']}}</td>
+    </tr>
+    {% endfor %}
+</form>
+    </tbody>
+
+  </table>
+</body>
+</div>
+{% endblock %}
