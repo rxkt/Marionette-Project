@@ -8,7 +8,12 @@
 </head>
 <br><br>
 <body>
+{% if error == "None" %}
+No items selected.
 
+{% elif error=="Complete" %}
+Transactions Completed!
+{% endif %}
 <table class="pure-table" width=1000 height=100>
   <thead>
     <tr>
@@ -20,7 +25,8 @@
       <th>Quantity</th>
       <th>Condition</th>
       <th> Price</th>
-      </tr>
+      <th>Completion</th>
+    </tr>
   </thead>
 <form method='POST'>
 <tbody>
@@ -35,6 +41,11 @@
       <td>{{items['quantity']}}</td>
       <td>{{items['cond']}}</td>
       <td>{{items['price']}}</td>
+      {% if items['seller']==user %}
+      <td><input type='checkbox' name='{{items['name']}}fin'></td>
+    {% else %}
+      <td></td>
+      {% endif %}
     </tr>
     {% endfor %}
 </form>

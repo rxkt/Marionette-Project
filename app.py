@@ -13,10 +13,10 @@ def authenticate(func):
         if 'username'in session:
             return func()
         else:
-            return redirect('/login')
+            return redirect('/')
 
 
-@app.route("/login",methods=['GET','POST'])
+@app.route("/",methods=['GET','POST'])
 def login():
     if request.method== 'POST':
         
@@ -30,9 +30,9 @@ def login():
             user = db.find_user(criteria)
             if user!=None and username!= "":
                 session['username'] = username
-                print session['username']
+                
             
-                return render_template('login.html',user=session['username'])
+                return redirect('/home')
             
             else:
                 return render_template('login.html',error="wrong info")
@@ -40,9 +40,8 @@ def login():
             return redirect('/register')
     else:
         if 'username' in session:
-            return render_template('login.html',error='Insession')
-        return render_template('login.html')
-        
+            return redirect('/home')
+        return render_template('login.html',error='Insession')
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
@@ -54,7 +53,7 @@ def register():
     first = request.form['first']
     last = request.form['last']
     if button == 'Cancel':
-        return redirect('/login')
+        return redirect('/')
     else:
         if not password or not first or not last:
             return render_template('register.html',error='incomplete')
@@ -85,7 +84,7 @@ def all_items():
     if request.method=='GET':
        
         return render_template('all_items.html',itemList=itemList,user=user)
-    toAdd={}
+    toAdd=[]
     button=request.form['button']
     for items in itemList:
         try:
@@ -112,10 +111,25 @@ def all_items():
 @app.route('/trans',methods=['GET','POST'])
 def trans():
     tran=db.all_trans(session['username'])
+    
     if request.method=='GET':
         
-        return render_template('trans.html',tran=tran)
-
+        return render_template('trans.html',tran=tran,user=session['username'])
+    toHis= []
+    for trans in tran:
+        try:
+            request.form[str(tran['name'])+'add']
+            his= True
+        except:
+            his=False
+        if his==True:
+            toHis.append[trans]
+    if len(toHis)==0:
+        return render_template('trans.html',error='None')
+    for his in toHis:
+        db.transactions.remove({'name':his['name']})
+        return render_template('trans.html',error='Complete')
+  
     
     
 @authenticate 
