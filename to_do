@@ -1,0 +1,10 @@
+messaging:
+	add a js file from view-auctions
+	-clicking name leads them to message.html form
+	--->hovering displays " click name to message this guy "
+	-message.html form sends a message
+	{{{{{message on the left dashboard is your "mailbox" only.
+
+
+tags:
+	
