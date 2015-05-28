@@ -7,13 +7,13 @@
     <!--using Pure CSS-->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <!--[if lte IE 8]>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
-    <![endif]-->
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+	<![endif]-->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
 
     
     <script async="" src="//www.google-analytics.com/analytics.js"></script>
-    <script type="text/javascript" src="../static/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/lib/jquery.min.js"></script>
     
     <title>
       B/S Home
@@ -88,7 +88,7 @@
 	      <li class="pure-menu-item">
 		<a href="/upload" class="pure-menu-link">
 		  Add A Listing
-		
+		  
 		</a>
 	      </li>
 
@@ -106,7 +106,7 @@
 	      <li class="pure-menu-item">
 		<a href="/message" class="pure-menu-link">
 		  Messages 
-	
+		  
 		</a>
 	      </li>
 
@@ -123,9 +123,12 @@
 	    </ul>
 	  </div>
 	</div>
-      
+	
       </div>
-{% block body %}
-{% endblock %}
-</body>
+      
+      {% block body %}
+      
+      
+      {% endblock %}
+  </body>
 </html>

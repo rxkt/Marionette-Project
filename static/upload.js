@@ -1,4 +1,5 @@
 console.log("hello")
-$("#tag").click(function(){
+$("#tags").click(function(){
+    //tags.text..onchange....function{check spacing }
     console.log("hello")
 });

@@ -4,20 +4,20 @@
 <div id="info" class="pure-u-2-5">
   <div class="email-content">  
     
-   {% if error == "Wrong info" %}
-   Please fill all the fields correctly!
-   {% elif error== "Name Taken" %}
-   This name is taken. Please choose another! 
-   {% endif %}
-   
+    {% if error == "Wrong info" %}
+    Please fill all the fields correctly!
+    {% elif error== "Name Taken" %}
+    This name is taken. Please choose another! 
+    {% endif %}
+    
     <form class="pure-form pure-form-stacked" method="POST">
-    <div class="pure-u-1-2">
-      <legend> 
-	<h2>
-	  NEW LISTING
-	</h2>
+      <div class="pure-u-1-2">
+	<legend> 
+	  <h2>
+	    NEW LISTING
+	  </h2>
       </legend>
-      <br>
+	<br>
 	
 	<label for="name"> <h3> Name of Item: </h3> </label>
 	<input id="name" type="text" name="name" placeholder='Name of item' required>
@@ -25,7 +25,7 @@
 	
 	<label for="category"> <h3> Category: </h3> </label>
 	<!--TURN THIS INTO TEXT BOX-->
-	<input id="tags"><br>
+	<input id="tags" type="text"><br>
 	<input id="category" type="radio" name="category" value="Educational materials">
 	Educational materials
 	<br>
