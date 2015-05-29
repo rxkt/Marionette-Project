@@ -1,4 +1,5 @@
 messaging:
+	add node_tag converting thingy script inside the html (softdev + node_) in the same dir
 	add a js file from view-auctions
 	-clicking name leads them to message.html form
 	--->hovering displays " click name to message this guy "
