@@ -28,6 +28,7 @@ Your transactions have been added! Be sure to message your seller(s) to complete
       <th>Quantity</th>
       <th>Condition</th>
       <th>Price</th>
+      <th>Auction?</th>
       <th>Add to Transactions</th>
     </tr>
   </thead>
@@ -42,7 +43,9 @@ Your transactions have been added! Be sure to message your seller(s) to complete
       <td>{{items[3]}}</td>
       <td>{{items[4]}}</td>
       <td>{{items[5]}}</td>
-       <td>$ {{items[6]}}</td>
+      
+      <td>$ {{items[6]}}</td>
+      <td>{% if items[7] == True %}Yes {% else %} No {% endif %}</td>
        {% if items[0]!= user %}
       <td><input type='checkbox' name="{{items[1]}}add"> Add </td>  
       {% else %}

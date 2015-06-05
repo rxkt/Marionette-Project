@@ -18,6 +18,7 @@
       <th>Quantity</th>
       <th>Condition</th>
       <th>Price</th>
+      <th>Auction?</th>
     </tr>
   </thead>
   <tbody>
@@ -28,7 +29,8 @@
       <td>{{items[2]}}</td>
       <td>{{items[3]}}</td>
       <td>{{items[4]}}</td>
-       <td>$ {{items[5]}}</td>
+      <td>$ {{items[5]}}</td>
+      <td>{% if items[6] == True %}Yes {% else %} No {% endif %}</td>
       
     </tr>
     {% endfor %}

@@ -108,7 +108,9 @@ def all_items():
         db.new_trans(add)
         db.items.remove({'name':add[1]})
     return render_template('all_items.html',error='Added')
-        
+
+
+
 @authenticate
 @app.route('/trans',methods=['GET','POST'])
 def trans():
@@ -134,7 +136,7 @@ def trans():
     tran=db.all_trans(session['username'])
     return render_template('trans.html',tran=tran,user=session['username'],error='Complete')
   
-    
+
     
 @authenticate 
 @app.route("/upload",methods=['GET','POST'])
@@ -148,14 +150,20 @@ def upload():
     quan= request.form['quantity']
     cond= request.form['cond']
     price=request.form['price']
+    auction=request.form['auc'] 
     if not price or not desc or not quan or not name:
         return render_template('upload.html',error="Wrong info")
     if db.find_item({'name':name}):
         print db.find_item({'name':name})
         return render_template('upload.html',error="Name Taken")
-    
+        
+            
     else:
-        item_params={'name':name,'category':category,'desc':desc,'quantity':quan,'cond':cond,'price':price,'seller':session['username']}
+        if auction == 'True':
+            auction= True
+        else:
+            auction= False
+        item_params={'name':name,'category':category,'desc':desc,'quantity':quan,'cond':cond,'price':price,'seller':session['username'],'auction':auction}
         item = db.new_item(item_params)
         
         
