@@ -47,6 +47,7 @@ def view_items(user):
     itemList=[]
     for item in items.find({"seller":user}):
         itemList.append([item['name'],item['category'],item['desc'],item['quantity'],item['cond'],item['price'],item['auction']])
+    print itemList
     return itemList
 
 

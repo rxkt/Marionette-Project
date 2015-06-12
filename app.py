@@ -150,7 +150,8 @@ def upload():
     quan= request.form['quantity']
     cond= request.form['cond']
     price=request.form['price']
-    auction=request.form['auc'] 
+    auction=request.form['auc']
+    print auction
     if not price or not desc or not quan or not name:
         return render_template('upload.html',error="Wrong info")
     if db.find_item({'name':name}):
@@ -159,11 +160,12 @@ def upload():
         
             
     else:
-        if auction == 'True':
+        if auction == 'True'or auction=='Yes':
             auction= True
         else:
             auction= False
         item_params={'name':name,'category':category,'desc':desc,'quantity':quan,'cond':cond,'price':price,'seller':session['username'],'auction':auction}
+        
         item = db.new_item(item_params)
         
         
