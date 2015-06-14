@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
+{% block head %}
+<h1> Messages </h1>
+<br>
+{% endblock %}
+
 {% block body %}
 
-<div id="hai" class="pure-u-3-5">
-<head>
-<h4>Messages</h4>
-</head>
-<br><br>
+<div id="hai">
 <body>
 {% if error == "None" %}
 Please enter a valid  message and reciever. 
@@ -42,7 +43,7 @@ Send a Message:
 <br><br><br>
 <input type='text' name='reciever' placeholder='Reciever '><br><br>
 <input type='text' name='message' placeholder='Message'><br><br>
-<input type='submit' name='button' value='Send'>
+<input type='submit' name='button' class='pure-button pure-button-primary' value='Send'>
 </form>
 </body>
 </div>

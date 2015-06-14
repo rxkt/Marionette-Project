@@ -1,4 +1,5 @@
 body {
+    background: #E6E6F0;
     color: #777;
 }
 
@@ -51,16 +52,18 @@ body {
 }
 
 .content {
+    position: relative;
     margin: 0 auto;
     padding: 0 2em;
-    max-width: 800px;
     margin-bottom: 50px;
     line-height: 1.6em;
 }
 
 .header {
+    position: relative;
     margin: 0;
-    color: #333;
+    background: #333385;
+    color: #FFFFFF;
     text-align: center;
     padding: 2.5em 2em 0;
     border-bottom: 1px solid #eee;

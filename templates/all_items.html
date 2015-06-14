@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
+{% block head %}
+<h1>Browse Listings</h1>
+<br>
+{% endblock %}
+
 {% block body %}
 
-<div id="hai" class="pure-u-3-5">
-<head>
-<h4>All Items</h4>
-</head>
-<br><br>
+<div id="hai">
 <body>
 {% if error == "None" %}
 Please Check the Checkbox to submit a transaction.
@@ -16,55 +17,56 @@ One or more of your items have been taken,please resubmit your transactions.
 Your transactions have been added! Be sure to message your seller(s) to complete your transactions.
 {% endif %}
 <form method='POST'>
-  <input type='submit' name='button' value='Submit Transactions/Bids'>
   <br><br>
-<table class="pure-table" width=1000 height=100>
-  <thead>
-    <tr>
-      <th>Seller</th>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Description</th>
-      <th>Quantity</th>
-      <th>Condition</th>
-      <th>Price</th>
-      <th>Auction?</th>
-      <th>Add to Transactions/Bids</th>
-    </tr>
-  </thead>
+  <input type='submit' name='button' class='pure-button pure-button-primary' value='Submit Transactions/Bids'>
+  <br><br>
+  <table class="pure-table" width=1000 height=100>
+    <thead>
+      <tr>
+	<th>Seller</th>
+	<th>Name</th>
+	<th>Category</th>
+	<th>Description</th>
+	<th>Quantity</th>
+	<th>Condition</th>
+	<th>Price</th>
+	<th>Auction?</th>
+	<th>Add to Transactions/Bids</th>
+      </tr>
+    </thead>
 
-<tbody>
-    {% for items in itemList %}
+    <tbody>
+      {% for items in itemList %}
 
-    <tr>
-      <td>{{items[0]}}</td>
-      <td>{{items[1]}}</td>
-      <td>{{items[2]}}</td>
-      <td>{{items[3]}}</td>
+      <tr>
+	<td>{{items[0]}}</td>
+	<td>{{items[1]}}</td>
+	<td>{{items[2]}}</td>
+	<td>{{items[3]}}</td>
 
-      <td>{{items[4]}}</td>
-      <td>{{items[5]}}</td>
-      {% if items[7]== True and items[0]!=user %}
-      <td><input type='number' name="{{items[1]}}bid" placeholder='Current Bid is {{items[6]}}' size=1 min={{items[6]}}><br> Bidder:{{items[8]}}  </td>
-      {% else %}
-      <td>{{items[6]}}</td>
-      {% endif %} 
-      
-      
-      <td>{% if items[7] == True %}Yes {% else %} No {% endif %}</td>
-      {% if items[0]!= user%}
-      
-      <td><input type='checkbox' name="{{items[1]}}add"> Add </td>  
-      
-      {% else %}
-      <td></td>
-      {% endif%}
-    </tr>
-    {% endfor %}
+	<td>{{items[4]}}</td>
+	<td>{{items[5]}}</td>
+	{% if items[7]== True and items[0]!=user %}
+	<td><input type='number' name="{{items[1]}}bid" placeholder='Current Bid is {{items[6]}}' size=1 min={{items[6]}}><br> Bidder:{{items[8]}}  </td>
+	{% else %}
+	<td>{{items[6]}}</td>
+	{% endif %} 
+	
+	
+	<td>{% if items[7] == True %}Yes {% else %} No {% endif %}</td>
+	{% if items[0]!= user%}
+	
+	<td><input type='checkbox' name="{{items[1]}}add"> Add </td>  
+	
+	{% else %}
+	<td></td>
+	{% endif%}
+      </tr>
+      {% endfor %}
 </form>
-    </tbody>
+</tbody>
 
-  </table>
+</table>
 </body>
 </div>
 {% endblock %}

@@ -1,38 +1,43 @@
+{% extends "basic.html" %}
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title> Register </title>
-  </head>
- {% block body %}
-  {% if error == "username taken" %}
-  That username has been taken. Please select another username.
-  {% elif error == "incomplete" %}
-  Please complete the required fields.
-  {% endif %}
-  <body>
+{% block head %}
+<h1> Registration </h1>
+<br>
+{% endblock %}
+
+{% block body %}
+{% if error == "username taken" %}
+That username has been taken. Please select another username.
+{% elif error == "incomplete" %}
+Please complete the required fields.
+{% endif %}
+<body>
+  <br>
   <form method ="POST">
-    
+    New Username
+    <br>
     <input type='text' name='username' placeholder='Username'>
+    <br>
+    New Password
     <br>
     <input type='password' name='password' placeholder='Password'>
     <br>
+    First Name
+    <br>
     <input type='text' name='first' placeholder='First Name'>
+    <br>
+    Last Name
     <br>
     <input type='text' name='last' placeholder='Last Name'>
     <br>
-    <input type='submit' name='button' value='Signup'>
-
     <br>
-    <input type='submit' name='button' value='Cancel'>
-
-   
+    <input type='submit' name='button' class='pure-button pure-button-primary' value='Signup'>
+    <input type='submit' name='button' class='pure-button' value='Cancel'>
     <br>
-   
     <br>
   </form>  
-  </body>
- {% endblock %}
+</body>
+{% endblock %}
   
 </html>
 

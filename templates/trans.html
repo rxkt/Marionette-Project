@@ -1,59 +1,61 @@
 {% extends "base.html" %}
 
+{% block head %}
+<h1> Transaction History </h1>
+<br>
+{% endblock %}
+
 {% block body %}
 
-<div id="hai" class="pure-u-3-5">
-<head>
-<h4>Your Transactions</h4>
-</head>
-<form method='POST'>
-<input type='submit' name='button' value='Submit Changes'>
-<br><br>
-<body>
-{% if error == "None" %}
-No items selected.
+<div id="hai">
+  <body>
+    <form method='POST'>
+      <br><br>
+      <input type='submit' name='button' class='pure-button pure-button-primary' value='Submit Changes'>
+      <br><br>
+      {% if error == "None" %}
+      No items selected.
 
-{% elif error=="Complete" %}
-Transactions Completed!
-{% endif %}
-<table class="pure-table" width=1000 height=100>
-  <thead>
-    <tr>
-      <th>Seller</th>
-      <th>Buyer</th>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Description</th>
-      <th>Quantity</th>
-      <th>Condition</th>
-      <th> Price</th>
-      <th>Completion</th>
-    </tr>
-  </thead>
-
-<tbody>
-    {% for items in tran %}
-
-    <tr>
-      <td>{{items['seller']}}</td>
-      <td>{{items['buyer']}}</td>
-      <td>{{items['name']}}</td>
-      <td>{{items['category']}}</td>
-      <td>{{items['desc']}}</td>
-      <td>{{items['quantity']}}</td>
-      <td>{{items['cond']}}</td>
-      <td>{{items['price']}}</td>
-      {% if items['seller']==user %}
-      <td><input type='checkbox' name='{{items['name']}}fin'>Completed</td>
-    {% else %}
-      <td></td>
+      {% elif error=="Complete" %}
+      Transactions Completed!
       {% endif %}
-    </tr>
-    {% endfor %}
-</form>
-    </tbody>
+      <table class="pure-table" width=1000 height=100>
+	<thead>
+	  <tr>
+	    <th>Seller</th>
+	    <th>Buyer</th>
+	    <th>Name</th>
+	    <th>Category</th>
+	    <th>Description</th>
+	    <th>Quantity</th>
+	    <th>Condition</th>
+	    <th>Price</th>
+	    <th>Completion</th>
+	  </tr>
+	</thead>
 
-  </table>
-</body>
+	<tbody>
+	  {% for items in tran %}
+
+	  <tr>
+	    <td>{{items['seller']}}</td>
+	    <td>{{items['buyer']}}</td>
+	    <td>{{items['name']}}</td>
+	    <td>{{items['category']}}</td>
+	    <td>{{items['desc']}}</td>
+	    <td>{{items['quantity']}}</td>
+	    <td>{{items['cond']}}</td>
+	    <td>{{items['price']}}</td>
+	    {% if items['seller']==user %}
+	    <td><input type='checkbox' name='{{items['name']}}fin'>Completed</td>
+	    {% else %}
+	    <td></td>
+	    {% endif %}
+	  </tr>
+	  {% endfor %}
+	</tbody>
+      </table>
+    </form>
+  </body>
 </div>
 {% endblock %}

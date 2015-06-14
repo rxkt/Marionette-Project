@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 
+{% block head %}
+<h1> My Listings </h1>
+<br>
+{% endblock %}
+
 {% block body %}
 
-<div id="hai" class="pure-u-3-5">
-<head>
-<h4>Your Items</h4>
-</head>
-<br><br>
+<div id="hai">
 <body>
 <form method='POST'>
-<input type='submit' name='button' value='Submit Transactions'>
+  <br><br>
+<input type='submit' name='button' class='pure-button pure-button-primary' value='Submit Transactions'>
 <br><br>
 <table class="pure-table" width=1000 height=100>
   <thead>
