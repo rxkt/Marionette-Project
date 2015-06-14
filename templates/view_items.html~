@@ -8,9 +8,7 @@
 </head>
 <br><br>
 <body>
-<form method='POST'>
-<input type='submit' name='button' value='Submit Transactions'>
-<br><br>
+
 <table class="pure-table" width=1000 height=100>
   <thead>
     <tr>
@@ -21,7 +19,6 @@
       <th>Condition</th>
       <th>Price</th>
       <th>Auction?</th>
-      <th>Transactions </th>
     </tr>
   </thead>
   <tbody>
@@ -33,8 +30,8 @@
       <td>{{items[3]}}</td>
       <td>{{items[4]}}</td>
       <td>$ {{items[5]}}</td>
-      <td>{% if items[6] == True %}Yes {% else %} No {% endif %} <br> Bidder: {{items[7]}}</td>
-      {% if items[6]== True and items[7]!="None" and items[7]!="" %}<td><input type='checkbox' name="{{items[0]}}accept">Accept Offer</td>{% else %} <td></td>{% endif %}
+      <td>{% if items[6] == True %}Yes {% else %} No {% endif %}</td>
+      
     </tr>
     {% endfor %}
     </tbody>

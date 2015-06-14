@@ -26,7 +26,7 @@
 	
 	<label for="category"> <h3> Category: </h3> </label>
 	<!--TURN THIS INTO TEXT BOX-->
-	<!--input id="tags" type="text"><br-->
+	<input id="tags" type="text"><br>
 	<input id="category" type="radio" name="category" value="Educational materials">
 	Educational materials
 	<br>

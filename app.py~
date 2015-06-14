@@ -72,38 +72,15 @@ def register():
 def home():
   return render_template('home.html')
 @authenticate
-@app.route("/view_items", methods=['GET','POST'])
+@app.route("/view_items")
 def view_items():
     itemList= db.view_items(session['username'])
-    print itemList
-    
-    if request.method=='GET':
-        return render_template('view_items.html',itemList=itemList)
-        
-    toAdd=[]
-    button=request.form['button']
-    for items in itemList:
-        try:
-            request.form[str(items[0])+"accept"]
-            add=True
-        except:
-            add=False
-        if add== True:
-
-            toAdd.append(items)
-    for add in toAdd:
-        
-        add.append(session['username'])
-        db.new_transBid(add)
-        db.items.remove({'name':add[0]})
-    return render_template('all_items.html',itemList=itemList)
-            
+    return render_template('view_items.html',itemList=itemList)
 @authenticate
 @app.route("/all_items", methods=['GET','POST'])
 def all_items():
     user=session['username']
     itemList= db.all_items()
-
     if request.method=='GET':
        
         return render_template('all_items.html',itemList=itemList,user=user)
@@ -116,16 +93,8 @@ def all_items():
         except:
             add=False
         if add==True:
-            try:
-                request.form[str(items[1])+"bid"]
-                bid = True
-            except:
-                toAdd.append(items)
-                bid = False
-            if bid == True:
-                db.items.update({'name':items[1]} ,{"$set": {'price':request.form[str(items[1]+"bid")],'bidder':session['username']}})
-
-    if len(toAdd)==0 and bid!= True:
+            toAdd.append(items)
+    if len(toAdd)==0:
         return render_template('all_items.html',error='None',itemList=itemList,user=user)
     for add in toAdd:
        
@@ -138,7 +107,7 @@ def all_items():
         add.append(session['username'])
         db.new_trans(add)
         db.items.remove({'name':add[1]})
-    return render_template('all_items.html',itemList=itemList,user=user,error='Added')
+    return render_template('all_items.html',error='Added')
 
 
 
@@ -195,7 +164,7 @@ def upload():
             auction= True
         else:
             auction= False
-        item_params={'name':name,'category':category,'desc':desc,'quantity':quan,'cond':cond,'price':price,'seller':session['username'],'auction':auction,'bidder':'None'}
+        item_params={'name':name,'category':category,'desc':desc,'quantity':quan,'cond':cond,'price':price,'seller':session['username'],'auction':auction}
         
         item = db.new_item(item_params)
         

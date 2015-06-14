@@ -25,6 +25,10 @@ def new_trans(criteria):
     crit={'buyer':criteria[7],'seller':criteria[0],'name':criteria[1],'category':criteria[2],'desc':criteria[3],'quantity':criteria[4],'cond':criteria[5],'price':criteria[6],'auction':criteria[7]}
     trans=transactions.insert(crit)
     return trans
+def new_transBid(criteria):
+    crit={'buyer':criteria[7],'seller':criteria[8],'name':criteria[0],'category':criteria[1],'desc':criteria[2],'quantity':criteria[3],'cond':criteria[4],'price':criteria[5],'auction':criteria[6]}
+    trans=transactions.insert(crit)
+    return trans
 def all_trans(name):
     transList=[]
     for trans in transactions.find({'buyer':name}):
@@ -41,12 +45,12 @@ def new_item(item_params):
 def all_items():
     itemList=[]
     for item in items.find():
-        itemList.append([item['seller'],item['name'],item['category'],item['desc'],item['quantity'],item['cond'],item['price'],item['auction']])
+        itemList.append([item['seller'],item['name'],item['category'],item['desc'],item['quantity'],item['cond'],item['price'],item['auction'],item['bidder']])
     return itemList
 def view_items(user):
     itemList=[]
     for item in items.find({"seller":user}):
-        itemList.append([item['name'],item['category'],item['desc'],item['quantity'],item['cond'],item['price'],item['auction']])
+        itemList.append([item['name'],item['category'],item['desc'],item['quantity'],item['cond'],item['price'],item['auction'],item['bidder']])
 
     return itemList
 

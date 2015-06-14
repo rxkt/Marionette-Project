@@ -16,7 +16,7 @@ One or more of your items have been taken,please resubmit your transactions.
 Your transactions have been added! Be sure to message your seller(s) to complete your transactions.
 {% endif %}
 <form method='POST'>
-  <input type='submit' name='button' value='Submit Transactions/Bids'>
+  <input type='submit' name='button' value='Submit Changes'>
   <br><br>
 <table class="pure-table" width=1000 height=100>
   <thead>
@@ -29,7 +29,7 @@ Your transactions have been added! Be sure to message your seller(s) to complete
       <th>Condition</th>
       <th>Price</th>
       <th>Auction?</th>
-      <th>Add to Transactions/Bids</th>
+      <th>Add to Transactions</th>
     </tr>
   </thead>
 
@@ -41,21 +41,13 @@ Your transactions have been added! Be sure to message your seller(s) to complete
       <td>{{items[1]}}</td>
       <td>{{items[2]}}</td>
       <td>{{items[3]}}</td>
-
       <td>{{items[4]}}</td>
       <td>{{items[5]}}</td>
-      {% if items[7]== True and items[0]!=user %}
-      <td><input type='number' name="{{items[1]}}bid" placeholder='Current Bid is {{items[6]}}' size=1 min={{items[6]}}><br> Bidder:{{items[8]}}  </td>
-      {% else %}
-      <td>{{items[6]}}</td>
-      {% endif %} 
       
-      
+      <td>$ {{items[6]}}</td>
       <td>{% if items[7] == True %}Yes {% else %} No {% endif %}</td>
-      {% if items[0]!= user%}
-      
+       {% if items[0]!= user %}
       <td><input type='checkbox' name="{{items[1]}}add"> Add </td>  
-      
       {% else %}
       <td></td>
       {% endif%}
