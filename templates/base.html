@@ -1,0 +1,106 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buying & Selling for Stuy</title>
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <link rel="stylesheet" href="../static/side-menu.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-41480445-1', 'purecss.io');
+      ga('send', 'pageview');
+    </script>
+    <script type="text/javascript" src="../static/lib/jquery.min.js"></script>
+    <style type="text/css"></style>
+
+  </head>
+
+  <body>
+    <div id="layout" class>
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+
+      <div id="menu">
+        <div class="pure-menu">
+	  
+	  <a class="pure-menu-heading" href="/home">
+	    <center>
+	      Buying
+	      <br>
+	      Selling
+	      <br>
+	      STUY
+	    </center>
+	  </a>
+	  <br>
+
+	  <ul class="pure-menu-list">	    
+	    <li class="pure-menu-item">
+	      <a href="/home" class="pure-menu-link">
+		Home
+	      </a>
+	    </li>    
+	    <br>	    
+	    <li class="pure-menu-item">
+	      <a href="/view_items" class="pure-menu-link">
+		My Listings
+	      </a>
+	    </li>
+	    <br>	    
+	    <li class="pure-menu-item">
+	      <a href="/all_items" class="pure-menu-link">
+		Browse Listings		
+	      </a>
+	    </li>
+	    <br>
+	    <li class="pure-menu-item">
+	      <a href="/upload" class="pure-menu-link">
+		Add A Listing		
+	      </a>
+	    </li>
+	    <br>	    
+	    <li class="pure-menu-item">
+	      <a href="/trans" class="pure-menu-link">
+		Transactions  		
+	      </a>
+	    </li>
+	    <br>	    
+	    <li class="pure-menu-item">
+	      <a href="/message" class="pure-menu-link">
+		Messages 		
+	      </a>
+	    </li>
+	    <br>	    
+	    <li class="pure-menu-item">
+	      <a href="/logout" class="pure-menu-link">
+		Logout  
+	      </a>
+	    </li>	    
+	  </ul>
+
+	</div>
+      </div>
+
+      <div id="main">
+	<div class="content">
+	  {% block body %}
+	  
+	  {% endblock %}
+	</div>
+      </div>
+
+
+    </div>
+
+    <script src="../static/ui.js"></script>
+  
+  </body>
+</html>
