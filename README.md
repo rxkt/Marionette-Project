@@ -3,13 +3,15 @@ Collaborators: Eric Liao, Christopher Wennedy, Michael Huang, Jerry Dai
 Softdev 
 Period 5
 
+### PROJECT VIDEO
+
+https://drive.google.com/file/d/0B4uMXCBi9zVBRFpTaklYVEU3dFE/view?usp=sharing
+
 ### GOAL (may expand): 
 Stuyvesant Buying and Selling website, add more features so we aren't stuck using a facebook group and hopefully it won't die after a few weeks.
 
 ### INSTRUCTIONS
-1. Go to: <a href="http://45.55.135.42:5000/"> B/S Stuy </a>
-- sorry if the link isn't working, deployment errors
-- if all else fails, app.py runs on localhost:5000/
+1. Go to: <a href="http://45.55.135.42:5000/"> B/S Stuy </a> ( sorry if the link isn't working, deployment errors,  if all else fails, app.py runs on localhost:5000/ )
 2. Signup/login to your account
 3. View the Home page to find out how to make your way through the site
 
