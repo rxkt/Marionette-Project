@@ -1,18 +1,28 @@
-# Final-Project
+# Final Project: Buying & Selling for Stuy 
 Collaborators: Eric Liao, Christopher Wennedy, Michael Huang, Jerry Dai
-Softdev Period 5
+Softdev 
+Period 5
 
-### Goal (may expand): Stuyvesant Buying and Selling website, add more features so we aren't stuck using a facebook group and hopefully it won't die after a few weeks.
+### GOAL (may expand): 
+Stuyvesant Buying and Selling website, add more features so we aren't stuck using a facebook group and hopefully it won't die after a few weeks.
 
-### Plans:
-####JS-> Firebase (as our database): (login system, products)
-####CSS, buying-selling system structure
-####D3-SVG visual on product reviews, user reviews.
+### INSTRUCTIONS
+1. Go to: <a href="http://45.55.135.42:5000/"> B/S Stuy </a>
+- sorry if the link isn't working, deployment errors
+- if all else fails, app.py runs on localhost:5000/
+2. Signup/login to your account
+3. View the Home page to find out how to make your way through the site
 
-###Timeline
+# - development -
+
+### PLAN:
+JS-> MongoDB (as our database): (login system, products)
+CSS, buying-selling system structure
+
+###Project Timeline
 4/29 : Created Basic Login, tried firebase to store information
 
-4/30 : Libraries, moved to flask and created more html pages
+4/30 : Libraries, moved to Flask and created more html pages
 
 5/3 : Attempted to use Socket to tie js and python
 
@@ -20,7 +30,7 @@ Softdev Period 5
 
 5/8 : Socket successfully works, added session, started design/css of html pages.
 
-5/11 : Moved to MongoDB? maybe. Framework practically complete.
+5/11 : Moved to MongoDB. Framework practically complete.
 
 5/12 : HTML basic layout, needs spicing up + css/javascript (most likely marionette)
 5/15 - 5/17 : Finish css/design of pages. Make everything look good.
@@ -39,5 +49,6 @@ Last week of May: Finish up, fluff up stuff. <br>
 <br>
 . .<br>
 . .<br>
+
 ######Side project by Eric: to create a chrome extension that notifies a user of a site update.
 ######node.js to scrape html. jquery to grab tag/element of page to compare/check updates.
